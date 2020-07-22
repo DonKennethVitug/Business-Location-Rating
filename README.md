@@ -1,2 +1,1 @@
 # BusinessLocationRating
-Thesis ni Tatay
