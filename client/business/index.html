@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+
+
+
+<head>
+
+
+
+  <base href="//businesslocation.byethost13.com/client/business/">
+
+
+
+  <!-- AngularJS -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+
+  <!-- jQuery -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+
+  <!-- ngSanitize -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js"></script>
+
+
+
+  <!-- ui.router -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script> 
+
+
+
+  <!-- morris chart -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-morris-chart/1.2.0/angular-morris-chart.min.js"></script>
+
+
+
+  <meta charset="utf-8">
+
+  <meta equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Thesis">
+
+  <meta name="author" content="Closoul23">
+
+
+
+  <!--Icons-->
+
+  <script src="assets/js/lumino.glyphs.js"></script>
+
+
+
+  <!-- Custom styles for this template -->
+
+  <link href="assets/css/ionicons.min.css" rel="stylesheet">
+
+  <link href="assets/css/animate.css" rel="stylesheet">
+
+  <link href="scripts/components/admin-components/admin.css" rel="stylesheet">
+
+  <link href="scripts/components/user-components/demographics/census.css" rel="stylesheet">
+
+  <link href="scripts/components/user-components/features/crime/crime.css" rel="stylesheet">
+
+  <link href="scripts/components/user-components/features/map/map.css" rel="stylesheet">
+
+  <link href="scripts/components/user-components/features/features.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+  <!--[if lt IE 9]>
+
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+  <![endif]-->
+
+  
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+
+  <link href="assets/css/socialButtons.css" rel="stylesheet">
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+  <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.css" rel="stylesheet" />
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+  <link href="//cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css" rel="stylesheet" />
+
+  <link href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css" rel="stylesheet" />
+
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  
+
+  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+
+    <link href="//cdn.jsdelivr.net/jquery.gritter/1.7.4/css/jquery.gritter.css" rel="stylesheet" />
+
+    <link href="//cdn.jsdelivr.net/angular.chartjs/0.8.8/angular-chart.min.css" rel="stylesheet" />
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <link href="assets/css/default.css" rel="stylesheet">
+
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+
+    <link href="scripts/components/user-components/home/home.css" rel="stylesheet" />
+
+    <link href="scripts/components/user-components/features/amenities/amenitieslist/amenitieslist.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/angular.wizard/latest/angular-wizard.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/v-tabs.min.css" />
+
+  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+
+  
+
+  <!-- ================== BEGIN BASE JS ================== -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+
+  <script src="//jtblin.github.io/angular-chart.js/angular-chart.js"></script>
+
+  <script src="assets/js/angular-count-to.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+
+
+  <!-- ================== BEGIN BASE JS ================== -->
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+  
+
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/jquery.gritter/1.7.4/js/jquery.gritter.min.js"></script>
+
+    <script src="assets/js/apps.min.js"></script>
+
+    <script src="assets/js/bwizard.js"></script>
+
+    <script src="assets/js/form-wizards.demo.min.js"></script>
+
+    <script src="assets/js/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+
+    <script src="assets/js/ng-file-upload.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-spinner/0.8.1/angular-spinner.min.js"></script>
+
+    <script src="//rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/angular.wizard/latest/angular-wizard.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.1/ui-bootstrap.min.js"></script>
+
+    <script src="assets/js/v-tabs.min.js"></script>
+
+    <script src="../../bower_components/angular-easyfb/build/angular-easyfb.min.js"></script>
+
+
+
+    <!--script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-animate.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script-->
+
+
+
+  <!-- ================== END PAGE LEVEL JS ================== -->
+
+
+
+  <title>Business Location Info</title>
+
+
+
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCv3iRqIQo19zZnOzn4uOKC3JACTuvFh5g&libraries=places" async defer></script>
+
+  <!--script src="http://www.openlayers.org/api/OpenLayers.js"></script-->
+
+
+
+  <!-- app's js -->
+
+
+
+  <!-- helpers -->
+
+  <script src="scripts/helpers/vitug/vitug-algorithm.js"></script>
+
+  <script src="scripts/helpers/vitug/vitug-api.js"></script>
+
+  <script src="scripts/helpers/vitug/vitug-auth.js"></script>
+
+  <script src="scripts/helpers/vitug/vitug-admin.js"></script>
+
+  <script src="scripts/helpers/vitug/vitug-cookie.js"></script>
+
+  <script src="scripts/helpers/facebook/facebook-init.js"></script>
+
+  <script src="scripts/helpers/facebook/facebookService.js"></script>
+
+
+
+  <!-- main -->
+
+  <script src="scripts/main-dependencies.js"></script>
+
+  <script src="scripts/main-controller.js"></script>
+
+  <script src="scripts/main-services.js"></script>
+
+  <script src="scripts/main-routes.js"></script>
+
+  <script src="scripts/main-directives.js"></script>
+
+
+
+  <!-- global components -->
+
+
+
+  <script src="scripts/components/global-components/navbar/navbar.js"></script>
+
+  <script src="scripts/components/global-components/navbar/navbarServices.js"></script>
+
+
+
+  <script src="scripts/components/global-components/sidemenu/sidemenu.js"></script>
+
+  <script src="scripts/components/global-components/sidemenu/sidemenuServices.js"></script>
+
+
+
+  <script src="scripts/components/global-components/users/login/login.js"></script>
+
+  <script src="scripts/components/global-components/users/login/loginServices.js"></script>
+
+
+
+  <script src="scripts/components/global-components/users/register/register.js"></script>
+
+  <script src="scripts/components/global-components/users/register/registerServices.js"></script>
+
+
+
+  <script src="scripts/components/global-components/navigate-auth/navigate-auth.js"></script>
+
+
+
+  <!-- user components -->
+
+
+
+  <script src="scripts/components/user-components/home/home.js"></script>
+
+  <script src="scripts/components/user-components/home/homeServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/userBusiness/selectBusiness/selectBusiness.js"></script>
+
+  <script src="scripts/components/user-components/userBusiness/addBusiness/addBusiness.js"></script>
+
+  <script src="scripts/components/user-components/userBusiness/deleteBusiness/deleteBusiness.js"></script>
+
+
+
+  <script src="scripts/components/user-components/phases/phase1.js"></script>
+
+  <script src="scripts/components/user-components/phases/phase2.js"></script>
+
+  <script src="scripts/components/user-components/phases/phase3.js"></script>
+
+  <script src="scripts/components/user-components/phases/phaseServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/features.js"></script>
+
+  <script src="scripts/components/user-components/features/featuresServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/users/update/update.js"></script>
+
+  <script src="scripts/components/user-components/users/update/updateServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/map/map.js"></script>
+
+  <script src="scripts/components/user-components/features/map/mapServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/population/population.js"></script>
+
+  <script src="scripts/components/user-components/features/population/populationServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/resident/resident.js"></script>
+
+  <script src="scripts/components/user-components/features/resident/residentServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/crime/crime.js"></script>
+
+  <script src="scripts/components/user-components/features/crime/crimeServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/features/amenities/amenitieslist/amenitieslist.js"></script>
+
+  <script src="scripts/components/user-components/features/amenities/amenitieslist/amenitieslistServices.js"></script>
+
+  <script src="scripts/components/user-components/features/amenities/analytics/amenities.js"></script>
+
+  <script src="scripts/components/user-components/features/amenities/analytics/amenitiesServices.js"></script>
+
+  <script src="scripts/components/user-components/features/amenities/map/amenitiesmap.js"></script>
+
+  <script src="scripts/components/user-components/features/amenities/map/amenitiesmapServices.js"></script>
+
+
+
+  <script src="scripts/components/user-components/demographics/census.js"></script>
+
+  <script src="scripts/components/user-components/demographics/crime/crime.js"></script>
+
+  <script src="scripts/components/user-components/demographics/people/people.js"></script>
+
+  <script src="scripts/components/user-components/demographics/personalities/personalities.js"></script>
+
+  <script src="scripts/components/user-components/demographics/expenditure/expenditure.js"></script>
+
+
+
+  <!-- admin components -->
+
+
+
+  <script src="scripts/components/admin-components/users/update-user/update-user.js"></script>
+
+  <script src="scripts/components/admin-components/users/add-user/add-user.js"></script>
+
+  <script src="scripts/components/admin-components/users/business-user/business-user.js"></script>
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+ 
+
+
+
+<style>
+
+  .hidden {
+
+    display: none;
+
+    margin: 0;
+
+  }
+
+</style>  
+
+
+
+</head>
+
+
+
+<body ng-controller="mainCtrl">
+
+<div id="mainMap" class="map hidden"></div>
+
+<div id="loader" class="veil hidden" style="background: url('assets/img/loader.gif') no-repeat fixed center; background-size: cover; z-index: 1"></div>
+
+  
+
+  <!-- begin #page-container -->
+
+  <div id="page-container" ng-class="{'fade': hidden.show, 'page-sidebar-fixed': hidden.show, 'page-header-fixed': hidden.show}">
+
+    <!-- begin #header -->
+
+    <div id="headside" class="hidden" ng-controller="navbarCtrl">
+
+    <div id="header" class="header navbar navbar-default navbar-fixed-top">
+
+      <!-- begin container-fluid -->
+
+      <div class="container-fluid" style="background-color: rgba(26,34,41,0.9)">
+
+        <!-- begin mobile sidebar expand / collapse button -->
+
+        <div class="navbar-header">
+
+          <a ui-sref="navigate_auth" class="navbar-brand" style="color: white; font-size: 30px"><span style="color:orange">Business</span> Location Info</a>
+
+          <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+          </button>
+
+        </div>
+
+        <!-- end mobile sidebar expand / collapse button -->
+
+        
+
+        <!-- begin header navigation right -->
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <div class="map">
+
+          <div id="navmap" style="display: none"></div>
+
+          </div>
+
+          <li>
+
+            <form class="navbar-form full-width">
+
+              <div class="form-group">
+
+                <input id="search" type="text" class="form-control hidden" ng-model="address" ng-enter="changeloc()" placeholder="Type the address or city" />
+
+                <button class="btn btn-search hidden" ng-click="geolocate()"><i class="fa fa-location-arrow"></i></button>
+
+              </div>
+
+                <select id="businessOnChange" ng-model="businessId" ng-change="businessOnChange()" class="form-control hidden" id="select-required">
+
+                  <option value="">Please Select a Business</option>
+
+                  <option ng-repeat="businessData in business" value="{{businessData.id}}">{{businessData.business_name}}</option>
+
+                </select>
+
+            </form>
+
+          </li>
+
+          <li class="dropdown navbar-user">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+
+              <img ng-src="{{ picture }}" alt="" /> 
+
+              <span class="hidden-xs">{{ name }}</span> <b class="caret"></b>
+
+            </a>
+
+            <ul class="dropdown-menu animated fadeInLeft">
+
+              <li class="arrow"></li>
+
+              <li><a ui-sref="updateUser">Edit Profile</a></li>
+
+              <!--li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+
+              <li><a href="javascript:;">Calendar</a></li>
+
+              <li><a href="javascript:;">Setting</a></li-->
+
+              <li class="divider"></li>
+
+              <li><a href="javascript:;" ng-click="logout()">Log Out</a></li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+        <!-- end header navigation right -->
+
+        
+
+      </div>
+
+      <!-- end container-fluid -->
+
+    </div>
+
+    <!-- end #header -->
+
+
+
+
+
+    
+
+    <!-- begin #sidebar -->
+
+    <div id="sidebar" class="sidebar">
+
+      <!-- begin sidebar scrollbar -->
+
+      <div data-scrollbar="true" data-height="100%">
+
+
+
+        <!-- begin sidebar user -->
+
+        <div id="userNav" class="hidden">
+
+          <ul class="nav">
+
+            <li class="nav-profile">
+
+              <div class="image">
+
+                <a ui-sref="home"><img ng-src="{{ picture }}" alt="" /></a>
+
+              </div>
+
+              <div class="info">
+
+                {{ name }}
+
+                <small>- {{ description  }}</small>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+          <!-- end sidebar user -->
+
+
+
+          <!-- begin sidebar nav -->
+
+          <ul class="nav" ng-controller="sidemenuCtrl">
+
+            <li class="nav-header">Navigation</li>
+
+            <li id="business" class="active has-sub">
+
+              <a ui-sref="home">
+
+                  <b class="caret pull-right"></b>
+
+                  <i class="fa fa-laptop"></i>
+
+                  <span>Business</span>
+
+              </a>
+
+              <ul class="sub-menu">
+
+                  <li class="">
+
+                      <a ui-sref-active="selectBusiness" ui-sref="selectBusiness">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Select Business</span>
+
+                      </a>
+
+                    </li>
+
+                  <li class="">
+
+                      <a ui-sref="addBusiness.phase1">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Add Business</span>
+
+                      </a>
+
+                  </li>
+
+                  <li class="">
+
+                      <a ui-sref="deleteBusiness">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Delete Business</span>
+
+                      </a>
+
+                  </li>
+
+              </ul>
+
+            </li>
+
+            <li id="features" class="has-sub" ng-show="businessSelected">
+
+              <a ui-sref="features">
+
+                  <b class="caret pull-right"></b>
+
+                  <i class="fa fa-laptop"></i>
+
+                  <span>Features</span>
+
+              </a>
+
+              <ul class="sub-menu">
+
+                  <li class="">
+
+                      <a ui-sref="crime">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Crime</span>
+
+                      </a>
+
+                    </li>
+
+                  <li class="">
+
+                      <a ui-sref="population">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Population</span>
+
+                      </a>
+
+                  </li>
+
+                  <li class="has-sub">
+
+                      <a href="javascript:;">
+
+                        <i class="fa fa-laptop"></i>
+
+                        <span>Nearby Amenities</span>
+
+                        <b class="caret pull-right"></b>
+
+                      </a>
+
+                      <ul class="sub-menu">
+
+                        <li><a ui-sref="amenitieslist">Amenities List</a></li>
+
+                        <li><a ui-sref="amenities">Analytics</a></li>
+
+                      </ul>
+
+                  </li>
+
+                  <li class="">
+
+                      <a ui-sref="census">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Demographic Census</span>
+
+                      </a>
+
+                  </li>
+
+                  <li class="">
+
+                      <a ui-sref="map">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Map</span>
+
+                      </a>
+
+                  </li>
+
+              </ul>
+
+            </li>
+
+            
+
+          <ul class="nav">
+
+            <li class="nav-profile">
+
+              <div class="info">
+
+                Business Location info
+
+                <small>Made by Tatay</small>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div> <!-- end sidebar user -->
+
+
+
+        <!-- begin sidebar admin -->
+
+        <div id="adminNav" class="hidden">
+
+          <ul class="nav">
+
+            <li class="nav-profile">
+
+              <div class="image">
+
+                <a ui-sref="home"><img ng-src="{{ picture }}" alt="" /></a>
+
+              </div>
+
+              <div class="info">
+
+                {{ name }}
+
+                <small>- {{ description  }}</small>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+
+
+          <ul class="nav" ng-controller="sidemenuCtrl">
+
+            <li class="nav-header">Navigation</li>
+
+            <li id="business" class="active has-sub">
+
+              <a>
+
+                  <b class="caret pull-right"></b>
+
+                  <i class="fa fa-laptop"></i>
+
+                  <span>Users</span>
+
+              </a>
+
+              <ul class="sub-menu">
+
+                  <li class="">
+
+                      <a ui-sref="admin_update_user">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Update User</span>
+
+                      </a>
+
+                    </li>
+
+                  <li class="">
+
+                      <a ui-sref="admin_add_user">
+
+                          <i class="fa fa-laptop"></i>
+
+                          <span>Add User</span>
+
+                      </a>
+
+                  </li>
+
+              </ul>
+
+            </li>
+
+            <li id="demographic" class="active has-sub">
+
+              <a>
+
+                  <b class="caret pull-right"></b>
+
+                  <i class="fa fa-laptop"></i>
+
+                  <span>Demographic Census</span>
+
+              </a>
+
+            </li>
+
+            
+
+          <ul class="nav">
+
+            <li class="nav-profile">
+
+              <div class="info">
+
+                Business Location info
+
+                <small>Made by Tatay</small>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div> <!-- end sidebar admin -->
+
+
+
+              <!-- begin sidebar minify button -->
+
+          <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+
+              <!-- end sidebar minify button -->
+
+        </ul>
+
+        <!-- end sidebar nav -->
+
+      </div>
+
+      <!-- end sidebar scrollbar -->
+
+    </div>
+
+    <div class="sidebar-bg"></div>
+
+    <!-- end #sidebar -->
+
+    </div>
+
+
+
+    <div ui-view></div>
+
+
+
+</div>
+
+  
+
+  <script>
+
+    $(document).ready(function() {
+
+      App.init();
+
+    });
+
+  </script>
+
+<script>
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+
+      ga('create', 'UA-53034621-1', 'auto');
+
+      ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+
+</html>
+

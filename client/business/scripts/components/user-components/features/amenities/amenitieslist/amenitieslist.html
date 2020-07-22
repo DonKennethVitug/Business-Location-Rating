@@ -1,0 +1,21 @@
+<div id="map" style="display: none"></div>
+<!-- begin #content -->
+<div id="content" class="content" style="margin-top: -15px">
+
+    <div class="banner" style="background-color: #1a2229">
+		<h1>List of Nearby Amenities</h1>
+	</div>
+
+    <ul class="nav nav-tabs" style="background-color: #1a2229">
+        <li class="active"><a href="" ng-click="setList('school')" data-toggle="tab" style="text-align: center"><img src="//maps.gstatic.com/mapfiles/place_api/icons/school-71.png" style="width: 20px; height: 20px"><br><span style="font-size: 20px"> School</span></a></li>
+        </li>
+        <li><a href="" ng-click="setList('hospital')" data-toggle="tab" style="text-align: center"><img src="//maps.gstatic.com/mapfiles/place_api/icons/doctor-71.png" style="width: 20px; height: 20px"><br><span style="font-size: 20px"> Hospital</span></a></li>
+        <li><a href="" ng-click="setList('church')" data-toggle="tab" style="text-align: center"><img src="//maps.gstatic.com/mapfiles/place_api/icons/worship_general-71.png" style="width: 20px; height: 20px"><br><span style="font-size: 20px"> Church</span></a></li>
+        <li><a href="" ng-click="setList('amusement_park')" data-toggle="tab" style="text-align: center"><img src="//cdn1.iconfinder.com/data/icons/map-objects/154/map-object-tree-park-forest-point-place-512.png" style="width: 20px; height: 20px"><br><span style="font-size: 20px"> Park</span></a></li>
+        <li><a href="" ng-click="setList('route')" data-toggle="tab" style="text-align: center"><img src="//maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png" style="width: 20px; height: 20px"><br><span style="font-size: 20px"> Route</span></a></li>
+    </ul>
+
+    <div class="" ui-view></div>
+
+</div>
+<!-- end #content -->

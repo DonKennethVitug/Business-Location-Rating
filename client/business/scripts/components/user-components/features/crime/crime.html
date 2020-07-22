@@ -1,0 +1,97 @@
+<!-- begin #content -->
+    <div id="content" class="content">
+      <!-- begin page-header -->
+      <h1 class="page-header bg-black" style="padding: 10px">Location: <span>{{locationText}}</span></h1>
+      <!-- end page-header -->
+      
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Crime Analytics Region
+                          <small>Datas about Criminalities</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="crimeDataRegion.data" 
+                      chart-labels="crimeDataRegion.labels" 
+                      chart-legend="true" 
+                      chart-series="crimeDataRegion.series" 
+                      chart-colors="crimeDataRegion.colors"
+                      chart-click="onClick"
+                      chart-options="crimeDataRegion.options"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                      <div class="chart-number" style="text-align: center; color: white">
+
+                          <h3 style="text-align: center; color: white">Average Crime Rate</h3>    
+                          <h2 style="text-align: center; color: white"><span class="count" count-to="{{crimeDataRegionRate}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                          <small><div class="star-ratings-sprite"><span style="width:{{crimeDataRegionRate}}%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">{{crimeDataRegionRate}}</h4></small>
+
+                          <h3 style="text-align: center; color: white">Average Crime Sol'n Efficiency</h3>    
+                          <h2 style="text-align: center; color: white"><span class="count" count-to="{{crimeDataRegionSoln}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                          <small><div class="star-ratings-sprite"><span style="width:{{crimeDataRegionSoln}}%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">{{crimeDataRegionSoln}}%</h4></small>
+
+                          <!--h2 style="text-align: center; color: white">Crime Score</h2>
+                          <small><div class="star-ratings-sprite"><span style="width:15%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">15%</h4></small>
+
+                          <h2 style="text-align: center; color: white">Crime Score</h2>
+                          <small><div class="star-ratings-sprite"><span style="width:15%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">15%</h4></small-->
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Crime Analytics City
+                          <small>Datas about Criminalities</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="crimeDataCity.data" 
+                      chart-labels="crimeDataCity.labels" 
+                      chart-legend="true" 
+                      chart-series="crimeDataCity.series" 
+                      chart-colors="crimeDataCity.colors"
+                      chart-click="onClick"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                      <div class="chart-number" style="text-align: center; color: white">
+
+                          <h3 style="text-align: center; color: white">Average Monthly Crime Rate</h3>    
+                          <h2 style="text-align: center; color: white"><span class="count" count-to="{{crimeDataCityRate}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                          <small><div class="star-ratings-sprite"><span style="width:{{crimeDataCityRate}}%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">{{crimeDataCityRate}}</h4></small>
+
+                          <!--h2 style="text-align: center; color: white">Crime Score</h2>
+                          <small><div class="star-ratings-sprite"><span style="width:15%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">15%</h4></small>
+
+                          <h2 style="text-align: center; color: white">Crime Score</h2>
+                          <small><div class="star-ratings-sprite"><span style="width:15%" class="star-ratings-sprite-rating"></span></div>
+                          <h4 style="text-align: center; color: white">15%</h4></small-->
+
+                      </div>
+                      <div id="visitors-donut-chart" style="height: 160px"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+    </div>
+    <!-- end #content -->

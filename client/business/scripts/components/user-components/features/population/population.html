@@ -1,0 +1,114 @@
+<!-- begin #content -->
+    <div id="content" class="content">
+      <!-- begin page-header -->
+      <h1 class="page-header bg-black" style="padding: 10px">Location: <span>{{locationText}}</span></h1>
+      <!-- end page-header -->
+
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Region Analytics
+                          <small>Datas about Population</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="populationChart.regionData" 
+                      chart-labels="populationChart.regionLabels" 
+                      chart-legend="true" 
+                      chart-series="populationChart.series" 
+                      chart-colors="populationChart.colors"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                    <h3 style="text-align: center; color: white">Region Population</h3>    
+                    <h2 style="text-align: center; color: white"><span class="count" count-to="{{populationRegion}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          City Analytics
+                          <small>Datas about Population</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="populationChart.cityData" 
+                      chart-labels="populationChart.cityLabels" 
+                      chart-legend="true" 
+                      chart-series="populationChart.series" 
+                      chart-colors="populationChart.colors"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                    <div class="widget-chart-sidebar bg-black-darker">
+                    <h3 style="text-align: center; color: white">City Population</h3>    
+                    <h2 style="text-align: center; color: white"><span class="count" count-to="{{populationCity}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Barangay Analytics
+                          <small>Datas about Population</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="populationChart.barangayData" 
+                      chart-labels="populationChart.barangayLabels" 
+                      chart-legend="true" 
+                      chart-series="populationChart.series" 
+                      chart-colors="populationChart.colors"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                    <div class="widget-chart-sidebar bg-black-darker">
+                    <h3 style="text-align: center; color: white">Barangay Population</h3>    
+                    <h2 style="text-align: center; color: white"><span class="count" count-to="{{populationBarangay}}" duration="2" count-from="{{countFrom}}">0</span></h2>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Demographics
+                          <small>Datas about Population</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="populationChart.demographicData" 
+                      chart-labels="populationChart.demographicLabels" 
+                      chart-legend="true" 
+                      chart-series="populationChart.series" 
+                      chart-colors="populationChart.colors"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+      
+    </div>
+    <!-- end #content -->

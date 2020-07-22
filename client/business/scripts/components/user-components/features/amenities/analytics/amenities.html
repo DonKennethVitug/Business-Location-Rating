@@ -1,0 +1,38 @@
+<!-- begin #content -->
+    <div id="content" class="content">
+      <!-- begin page-header -->
+      <h1 class="page-header bg-black" style="padding: 5px 5px 5px 5px">Location: <span>{{locationText}}</span></h1>
+      <!-- end page-header -->
+      <!-- begin row -->
+      <div class="row">
+          <div class="col-md-12">
+              <div class="widget-chart with-sidebar bg-black">
+                  <div class="widget-chart-content">
+                      <h4 class="chart-title">
+                          Nearby Amenities Analytics
+                          <small>Datas about Nearby Amenities</small>
+                      </h4>
+                      <canvas
+                      class="chart chart-bar" 
+                      chart-data="amenitiesChart.data" 
+                      chart-labels="amenitiesChart.labels" 
+                      chart-legend="true" 
+                      chart-series="amenitiesChart.series" 
+                      chart-click="onClick"
+                      chart-options="amenitiesChart.options"></canvas> 
+                  </div>
+                  <div class="widget-chart-sidebar bg-black-darker">
+                      <div class="chart-number" style="text-align: center; color: white">
+
+                      </div>
+                      <div id="visitors-donut-chart" style="height: 160px">
+                        
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+    </div>
+    <!-- end #content -->

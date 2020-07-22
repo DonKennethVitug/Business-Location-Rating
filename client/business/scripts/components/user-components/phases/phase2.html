@@ -1,0 +1,78 @@
+<div class="panel-body panel-form bg-black">
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay3">Select Region:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay4" style="padding-bottom: 30px">
+        <select ng-model="userInputs.regionModel" ng-change="regionOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+          <option value="">Please Select a Region</option>
+          <option ng-repeat="region in regionData" value="{{region}}">{{region}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay5">Select Province:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay6" style="padding-bottom: 30px">
+        <select ng-model="userInputs.provinceModel" ng-change="provinceOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+          <option value="">Please Select a Province</option>
+          <option ng-repeat="province in provinceData" value="{{province}}">{{province}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay6">Select City:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay8" style="padding-bottom: 30px">
+        <select ng-model="userInputs.cityModel" ng-change="cityOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+        <option value="">Please Select a City</option>
+          <option ng-repeat="city in cityData" value="{{city}}">{{city}}</option>
+        </select>      
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay8">Select Baranggay:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay10" style="padding-bottom: 30px">
+        <select ng-model="userInputs.barangayModel" ng-change="barangayOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+        <option value="">Please Select a Barangay</option>
+          <option ng-repeat="barangay in barangayData" value="{{barangay}}">{{barangay}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay10">Find your Business site:</div>
+        </label>
+        <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay11">
+            <div id="map" style="width: 100%; height: 250px"></div><br>
+            <table>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-success" ng-click="geolocate()">Find me</button> 
+                </td>
+                <td>
+                  <button type="button" class="btn btn-success" ng-click="zoomin(18)">Zoom in</button> 
+                </td>
+                <td>
+                  <button type="button" class="btn btn-success" ng-click="zoomout()">Zoom out</button> 
+                </td>
+                <td>
+                  <button type="button" class="btn btn-success" ng-click="clear()">Clear</button> </label>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <div class="row hidden">
+              <div class="col-md-6"><span style="color: white">Latitude</span>
+              <input ng-model="latlng.lat" class="form-control" type="text" id="default_latitude" placeholder="Latitude..." />
+            </div>
+            <div class="col-md-6"><span style="color: white">Longitude</span>
+              <input ng-model="latlng.lng" class="form-control" type="text" id="default_longitude" placeholder="Longitude..." />
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"></label>
+      <div class="col-md-6 col-sm-6" style="padding-bottom: 30px">
+        <a ng-click="save(userInputs)" class="btn btn-block btn-danger">Next Section 
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+      </div>
+    </div>
+</div>

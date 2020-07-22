@@ -1,0 +1,15 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/twig-view": "^2.1"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Models\\": "app/Models/",
+    		"Controllers\\": "app/Controllers/",
+            "Interfaces\\": "app/Interfaces/",
+            "Helpers\\": "app/Helpers/",
+            "Exceptions\\": "app/Exceptions/"
+    	}
+    }
+}

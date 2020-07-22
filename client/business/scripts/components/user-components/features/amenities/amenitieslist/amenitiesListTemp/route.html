@@ -1,0 +1,37 @@
+<div ng-hide="amenitiesData.route.length" style="background-color: #2d353c">
+	<center><h1 class="fontOrange" style="margin-top: 0; padding: 100px">NO PLACE FOUND...</h1></center>
+</div>
+
+	<div ng-show="amenitiesData.route" ng-repeat="(key, route) in amenitiesData.route">
+		<div class="setFont" style="background-color: #2d353c">
+			<div class="row">
+				<div class="col-md-12">
+				<div class="title-font">
+					<h1>&nbsp <img src="//maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png" /> {{route.name}}
+				</div>
+				<br>
+				</div>
+				<div class="col-md-12">
+					<div class="mapstreet">
+						<div class="row">
+								<ng-map center="{{route.geometry.location.lat()}}, {{route.geometry.location.lng()}}" zoom="18" disable-default-u-i="true" draggable="false" scrollwheel="false" style="width:100%;height:300px;float:left" map-type-id="HYBRID">
+								    <marker position="{{route.geometry.location.lat()}}, {{route.geometry.location.lng()}}" centered="true"></marker>
+								    <marker position="{{route.geometry.location.lat()}}, {{route.geometry.location.lng()}}"></marker>
+										<!--street-view-panorama
+											click-to-go="false"
+											disable-default-u-i="false"
+											disable-double-click-zoom="false"
+											position="{{route.geometry.location.lat()}}, {{route.geometry.location.lng()}}"
+											pov="{heading: heading, pitch: pitch}"
+											scrollwheel="false"
+											container="streetview{{key}}">
+		    							</street-view-panorama-->
+				   				</ng-map>
+				   				<!--div id="streetview{{key}}" style="width:50%;height:300px;float:left"></div-->
+		   				</div>
+					</div>
+				</div>
+			</div><!-- row-->
+			<hr>
+		</div><!-- setFont -->
+	</div>

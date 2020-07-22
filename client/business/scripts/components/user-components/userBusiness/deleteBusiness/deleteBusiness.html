@@ -1,0 +1,73 @@
+<!-- begin #content -->
+    <div id="content" class="content">
+
+        <div class="" style="margin-top: -15px">
+            <div class="banner bg-black-darker fadeInDown animated animation-delay2">
+                <h1>Select your Business</h1>
+            </div>
+        </div><br>
+
+        <div ng-repeat="businessData in userBusiness">
+			<div id="{{businessData.id}}" class="setFont bg-black fadeInDown animated animation-delay3" ng-class="{'bg-border': businessData.active}">
+				<div class="row"><br>
+					<div class="col-md-4 fadeInDown animated animation-delay4">
+						<div class="mapstreet">
+							<div class="row">
+									<ng-map center="{{businessData.business_location_latitude}}, {{businessData.business_location_longitude}}" zoom="18" disable-default-u-i="true" draggable="false" scrollwheel="false" style="width:100%;height:315px;float:left" map-type-id="HYBRID">
+									    <marker position="{{businessData.business_location_latitude}}, {{businessData.business_location_longitude}}" centered="true"></marker>
+									    <marker position="{{businessData.business_location_latitude}}, {{businessData.business_location_longitude}}"></marker>
+											<!--street-view-panorama
+												click-to-go="false"
+												disable-default-u-i="false"
+												disable-double-click-zoom="false"
+												position="{{businessData.business_location_latitude}}, {{businessData.business_location_longitude}}"
+												pov="{heading: heading, pitch: pitch}"
+												scrollwheel="false"
+												container="streetview{{key}}">
+			    							</street-view-panorama-->
+					   				</ng-map>
+					   				<!--div id="streetview{{key}}" style="width:50%;height:300px;float:left"></div-->
+			   				</div>
+						</div>
+					</div>
+
+						<div class="col-md-8">
+							<div class="col-md-6">
+									<div class="col-md-12 fadeInDown animated animation-delay5" style="padding-bottom: 10px">
+										<h4>Name: <br><input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_name}}></h4> 
+									</div>
+									<div class="col-md-12 fadeInDown animated animation-delay6" style="padding-bottom: 10px">
+										<h4>Description: <br><input class="form-control" style="color: black; padding: 15px 15px 50px 15px" type="text" readonly value={{businessData.business_description}}></h4> 
+									</div>
+									<div class="col-md-12 fadeInDown animated animation-delay7" style="">
+										<h4>Scope: <br><input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_scope}}></h4> 
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+									<div class="col-md-12 fadeInDown animated animation-delay8">
+										<h4>Region: <input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_location_region}}></h4>  
+									</div>
+									<div class="col-md-12 fadeInDown animated animation-delay9">
+										<h4>Province: <input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_location_province}}></h4>  
+									</div>
+									<div class="col-md-12 fadeInDown animated animation-delay10">
+										<h4>City: <input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_location_city}}></h4>
+									</div>
+									<div class="col-md-12 fadeInDown animated animation-delay11">
+										<h4>Barangay: <input class="form-control" style="color: black;" type="text" readonly value={{businessData.business_location_barangay}}></h4> 
+									</div>
+							</div>
+							<div class="col-md-12"><br>
+								<button class="btn btn-danger" style="width: 90%; margin: 0 20px 0 20px; height: 47px" ng-click="activate(businessData.id)">DELETE</button>
+							</div>
+						</div>
+					
+				</div><!--row-->
+				<br><br>
+			</div><!-- setFont -->
+			<br>
+        </div>
+
+    </div>
+<!-- end #content -->

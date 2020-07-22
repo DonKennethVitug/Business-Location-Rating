@@ -1,0 +1,32 @@
+<div id="crime" class="">
+
+	<center>
+
+		<img style="width: 150px; height: 150px" src="//2.bp.blogspot.com/-SwM4_1F1EeU/TxxAOI30AmI/AAAAAAAAACI/CmepBUW5jC0/s1600/expense-manager-icon-256x256.png" class="fadeInDown animated animation-delay2">
+		<h1 style="color: white" class="fadeInDown animated animation-delay4"><span style="color: orange">Expenditure of residence </span> Ratings</h1>
+
+		<hr style="border-color: white" />
+
+	    
+	</center>
+
+	<h2 style="color: white; margin-top: 15px" class="fadeInDown animated animation-delay4">Expenditure of people in <span class="fontOrange"><b>{{ businessData.location.address }}</b></span></h2>
+
+	<div ng-repeat="data in censusData.expenditure" class="row fadeInLeft animated animation-delay3" style="margin-top: 35px; background-color: #1a2229 !important">
+			<div class="col-md-4 fadeInLeft animated animation-delay4">
+				<h2 class="fadeInDown animated animation-delay5">{{ data.name }}: </h2> 
+			</div>
+			<div class="col-md-6 fadeInLeft animated animation-delay5">
+				<div class="progress  fadeInLeft animated animation-delay6" style="height: 30px; margin-top: 23px">
+			      <div class="progress-bar progress-bar-striped active" role="progressbar"
+			      aria-valuenow="{{ data.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ data.rating }}%">
+			        <span style="font-size: 25px">{{ data.rating }}%</span>
+			      </div>
+			    </div>		
+			</div>
+			<div class="col-md-2 fadeInLeft animated animation-delay7">
+				<h2 class="fontOrange">{{ data.score ? data.score : "No Data"}} </h2>
+			</div>
+	</div>
+
+</div>

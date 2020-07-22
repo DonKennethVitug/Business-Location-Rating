@@ -1,0 +1,45 @@
+        <!-- begin login -->
+        <div id="register" class="login bg-black animated fadeInDown hidden">
+            <!-- begin brand -->
+            <div class="login-header">
+                <div class="brand">
+                    <span class="fa fa-user"></span> Business Location Info
+                    <small>Sign in here...</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>
+            </div>
+            <!-- end brand -->
+            <div class="login-content">
+                <form name="registerForm" ng-submit="registerUser(userProfile)">
+                    <div class="form-group m-b-20">
+                        <center><img ng-src="{{userProfile.picture}}" / ></center>
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control input-lg" placeholder="Name" ng-model="userProfile.name" required ng-readonly="true" />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control input-lg" placeholder="Email" ng-model="userProfile.email" required ng-readonly="isnotloggedin" />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control input-lg" placeholder="Username" ng-model="userProfile.username" required ng-readonly="isnotloggedin" />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="password" class="form-control input-lg" placeholder="Password" ng-model="userProfile.password" required ng-readonly="isnotloggedin" />
+                    </div>
+                    <div class="login-buttons">
+                    <a ng-disabled="!isnotloggedin" ng-click="loginFB()" class="btn btn-block btn-social btn-facebook">
+                       <i class="fa fa-facebook"></i> L O G I N
+                    </a></div>
+                    <br>
+                    <div class="login-buttons">
+                        <input ng-disabled="isnotloggedin" type="submit" class="btn btn-success btn-block btn-lg" value="Sign me up" />
+                    </div>
+                    <br>
+                    Already a member yet? Click <a href="" ui-sref="login">here</a> to login.
+                </form>
+
+            </div>
+        </div>
+        <!-- end login -->

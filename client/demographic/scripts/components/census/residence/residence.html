@@ -1,0 +1,63 @@
+<div id="instruction" class="">
+
+	<center>
+
+	<img src="//www.javaromaroasters.com/uploads/4/0/9/8/40982329/1108457_orig.png" class="fadeInDown animated animation-delay1" style="height: 200px;width: 200px;">
+
+	
+
+    <h1 class="fadeInDown animated animation-delay1">
+    <span class="fontOrange"> 
+	Select the place of your residence:
+	</span></h1>
+
+	</center> <br><br>
+
+	<div class="fadeInDown animated animation-delay2">
+	    <h2 class="fontOrange" style="display: inline-block">Region: </h2>
+	</div>
+	<div class="fadeInDown animated animation-delay3">
+	    <select ng-model="userInputs.residence_region" ng-change="regionOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+		    <option value="">Please Select a Region</option>
+		    <option ng-repeat="region in regionData" value="{{region}}">{{region}}</option>
+	    </select>
+    </div>
+
+    <div class="fadeInLeft animated animation-delay4">
+	    <h2 class="fontOrange" style="display: inline-block">Province: </h2>
+	</div>
+	<div class="fadeInLeft animated animation-delay5">
+	    <select ng-model="userInputs.residence_province" ng-change="provinceOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+		    <option value="">Please Select a Province</option>
+		    <option ng-repeat="province in provinceData" value="{{province}}">{{province}}</option>
+	    </select>
+    </div>
+
+    <div class="fadeInRight animated animation-delay6">
+	    <h2 class="fontOrange" style="display: inline-block">City: </h2>
+	</div>
+	<div class="fadeInRight animated animation-delay7">
+	    <select ng-model="userInputs.residence_city" ng-change="cityOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+		    <option value="">Please Select a City</option>
+		      <option ng-repeat="city in cityData" value="{{city}}">{{city}}</option>
+	    </select> 
+    </div>
+
+    <div class="fadeInUp animated animation-delay8">
+	    <h2 class="fontOrange" style="display: inline-block">Barangay: </h2>
+	</div>
+	<div class="fadeInUp animated animation-delay9">
+	    <select ng-model="userInputs.residence_barangay" ng-change="barangayOnChange()" class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
+		    <option value="">Please Select a Barangay</option>
+		      <option ng-repeat="barangay in barangayData" value="{{barangay}}">{{barangay}}</option>
+	    </select>
+    </div>
+
+	<center>
+
+	    <button ng-disabled="!isAnswered" ng-click="next()" class="btn btn-block btn-danger fadeInUp animated animation-delay10" style="width: 200px; height: 35px; margin-top: 50px">
+	       <b>N E X T</b>
+	    </button>
+
+	</center>
+</div>

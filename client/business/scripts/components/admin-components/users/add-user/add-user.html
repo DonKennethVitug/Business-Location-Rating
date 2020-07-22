@@ -1,0 +1,52 @@
+<div class="content">
+    <h3 class="page-title fadeInUp animated animation-delay4">Add User</h3>
+
+    <div class="panel panel-default">
+        <div class="panel-body bg-black-darker">
+              <form class="form" ng-submit='save(addUser)'>
+                  <div class="row">
+                      <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <label class="font-white" for="name">Name</label>
+                                <input type="text" class="form-control" placeholder="juandelacruz" name="name" ng-model="addUser.name" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-white" for="username">Username</label>
+                                <input type="text" class="form-control" placeholder="juandelacruz" ng-model="addUser.username" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-white" for="email">Email Address</label>
+                                <input type="email" class="form-control" placeholder="email@example.com" ng-model="addUser.email" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-white" for="description">Description</label>
+                                <input type="text" class="form-control" placeholder="juandelacruz" name="description" ng-model="addUser.description" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-white" for="password">Password</label>
+                                <input type="text" class="form-control" name="password" ng-model="addUser.password" required/>
+                            </div>
+                  
+                            <div class="form-group">
+                              <label class="font-white">Role</label>
+                              <select class="form-control" ng-model="addUser.role">
+                                   <option value="admin">Admin</option>
+                                   <option value="user">User</option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                               <input type="submit" class="btn btn-primary" value="Save" />
+                            </div>
+
+                    </div>
+              </form>
+        </div>
+    </div>
+</div>
+

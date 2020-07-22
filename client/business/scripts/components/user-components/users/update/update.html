@@ -1,0 +1,57 @@
+<!-- begin #content -->
+    <div id="content" class="content">
+
+                <div class="col-md-12">
+                  <!-- begin panel -->
+                  <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Edit Profile</h4>
+                    </div>
+                    <div class="panel-body panel-form bg-black">
+                        <form class="form-horizontal" ng-model="userInputs" ng-submit="submit(userInputs)" data-parsley-validate="true" name="demo-form">
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white" for="fullname">First Name * :</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input class="form-control" ng-model="userInputs.fname" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white" for="fullname">Last Name * :</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input class="form-control" ng-model="userInputs.lname" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white" for="email">Email * :</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input class="form-control" ng-model="userInputs.email" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white" for="message">Tell me about yourself (20 chars min, 200 max) :</label>
+                            <div class="col-md-6 col-sm-6">
+                              <textarea class="form-control" ng-model="userInputs.desc" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white" for="message">Phone :</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input class="form-control" ng-model="userInputs.phone" type="text" id="data-phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" />
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 text-white"></label>
+                            <div class="col-md-6 col-sm-6">
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                  <!-- end panel -->
+                </div>
+                <!-- end col-6 -->
+
+      
+    </div>
+    <!-- end #content -->

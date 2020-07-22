@@ -1,0 +1,77 @@
+<div id="quiz">
+    <div class="row">
+        <div class="col-md-12 fontWhite">
+
+        <center>
+        <img ng-show="showImg" id="quizImg" src="{{ quiz.image }}" style="width: 150px;height: 150px"
+        class=""></center>
+
+        <h1 class="center fontOrange fadeInRight animated animation-delay1">
+
+        {{quiz.name}}
+
+        </h1></div>
+    </div>
+    <hr />
+    <div ng-show="mode=='quiz'">
+        <div ng-repeat="question in filteredQuestions">
+            <div class="label label-warning fadeInLeft animated animation-delay1" style="font-size: 20px; background: green">Question {{currentPage}} of {{totalItems}}.</div>
+            <div class="row fadeInLeft animated animation-delay1">
+                <div class="col-md-12">
+                    <h2 class="fontOrange">{{currentPage}}. <span ng-bind-html="question.Name"></span></h2>
+                </div>
+            </div>
+            <div class="row text-left options fadeInUp animated animation-delay7">
+                <div class="col-md-6" ng-repeat="option in question.Options">
+                    <div class="option">
+                        <label class="" for="{{option.Id}}">
+                            <input id="{{option.Id}}" type="checkbox" ng-model="option.Selected" ng-change="onSelect(question, option);" />
+                            {{option.Name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="quizNav  fadeInUp animated animation-delay10">
+            <div>
+                <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(1);">First</button>
+                <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(currentPage - 1);">Prev</button>
+                <button class="btn btn-primary"                            ng-click="goTo(currentPage + 1);">Next</button>
+                <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(totalItems);">Last</button>
+            </div>
+            <br />
+            <pagination ng-show="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+        </div>
+    </div>
+    <div class="row review" ng-show="mode=='review'">
+        <div class="col-sm-4" ng-repeat="question in questions">
+            <div ng-click="goTo($index + 1)" class="{{ isAnswered($index) == 'Answered'? 'answered': 'not-answered' }}">{{$index + 1}}. {{ isAnswered($index) }}</div>
+        </div>
+    </div>
+    <div class="result" ng-show="mode=='result'">
+        <h2 class="fontWhite">Quiz Result</h2>
+        <div ng-repeat="question in questions">
+            <div class="result-question">
+                <h4>{{$index + 1}}. {{question.Name}}</h4>
+                <div class="row">
+                    <div class="col-md-6" ng-repeat="Option in question.Options">
+                        <div>
+                            <input id="{{Option.Id}}" type="checkbox" disabled="disabled" ng-model="Option.Selected" />
+                            {{Option.Name}}
+                        </div>
+                    </div>
+                </div>
+                <h4 class="alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}.</h4>
+            </div>
+        </div>
+        <h4 class="alert alert-info text-center moreFontsize">You may close this window now.</h4>
+    </div>
+    
+    <div class="hidden" ng-show="mode!='result'">
+    <hr />
+        <button class="btn btn-default" ng-click="mode = 'quiz'">Quiz</button> 
+        <button class="btn btn-default" ng-click="mode = 'review'">Review</button> 
+        <button class="btn btn-default" ng-click="onSubmit();">Submit Quiz</button>
+    </div>
+</div>

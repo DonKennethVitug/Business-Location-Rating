@@ -1,0 +1,53 @@
+<div class="content">
+    <h3 class="page-title fadeInUp animated animation-delay4">Businesses of {{ user }}</h3>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Scope</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='business in businessData'>
+                    <td>
+                        <a ui-sref="admin_business_business({id: business._id})" data-ng-hide="editMode" ng-click="select(business.id)">{{business.business_name}}</a>
+                        <input type="text" data-ng-show="editMode" ng-model="business.business_name" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{business.business_company_name}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="business.business_company_name" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{business.business_scope}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="business.business_scope" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{business.business_description}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="business.business_description">
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{business.business_address}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="business.business_address">
+                    </td>
+                    <td>
+                        <a a-href="" class="glyphicon glyphicon-pencil" data-ng-hide="editMode" data-ng-click="editMode = true"></a>
+                        <a a-href="" class="glyphicon glyphicon-ok" data-ng-show="editMode" data-ng-click="editMode = false; update(business)"></a>
+                        <a a-href="" class="glyphicon glyphicon-remove" data-ng-show="editMode" data-ng-click="editMode = false"></a>
+                        <a a-href="" class="btn btn-danger"  data-ng-show="editMode" data-ng-click="editMode = delete(business.id)">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a style="float: left" class="btn new-user-btn" role="button" ui-sref="admin_update_user">Back</a>
+        <a class="btn new-user-btn" role="button" ui-sref="admin_add_business">Add New business</a>
+    </div>
+
+</div>

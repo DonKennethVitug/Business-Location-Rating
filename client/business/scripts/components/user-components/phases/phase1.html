@@ -1,0 +1,42 @@
+<div class="panel-body panel-form bg-black">
+  <form class="form-horizontal form-bordered" >
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay3">Business Name:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay4" style="padding-bottom: 30px">
+        <input ng-model="userInputs.business_name" class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay5">About your Business:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay6" style="padding-bottom: 30px">
+        <textarea ng-model="userInputs.business_desc" class="form-control" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay7">Company name:</div></label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay8" style="padding-bottom: 30px">
+        <input ng-model="userInputs.business_company" class="form-control" type="text" id="data-phone" placeholder="Company name..." />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"><div style="font-size: 20px" class="fontOrange fadeInRight animated animation-delay9">Business Scope:</div> </label>
+      <div class="col-md-6 col-sm-6 fadeInRight animated animation-delay10" style="padding-bottom: 30px">
+        <select ng-model="userInputs.business_scope" class="form-control" id="select-required" name="selectBox">
+          <option value="">Please Select a Business Scope</option>
+          <option value="national">National</option>
+          <option value="region">Region</option>
+          <option value="city">City</option>
+          <option value="barangay">Barangay</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4 col-sm-4 text-white"></label>
+      <div class="col-md-6 col-sm-6" style="padding-bottom: 30px">
+        <a ng-click="save(userInputs)" class="btn btn-block btn-danger fadeInUp animated animation-delay11">Next Section 
+          <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

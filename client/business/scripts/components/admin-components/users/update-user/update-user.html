@@ -1,0 +1,55 @@
+<div class="content">
+    <h3 class="page-title fadeInUp animated animation-delay4">Update Users and their Business</h3>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email Address</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='user in userData'>
+                    <td>
+                        <a ui-sref="admin_business_user({id: user.id, name: user.name})" data-ng-hide="editMode" ng-click="select(user.id)">{{user.username}}</a>
+                        <input type="text" data-ng-show="editMode" ng-model="user.username" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{user.email}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="user.email" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{user.name}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="user.name" />
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{user.description}}</span>
+                        <input type="text" data-ng-show="editMode" ng-model="user.description">
+                    </td>
+                    <td>
+                        <span data-ng-hide="editMode">{{user.role}}</span>
+                        <select class="form-control" data-ng-show="editMode" ng-model="user.role">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                    <td>
+                        <a a-href="" class="glyphicon glyphicon-pencil" data-ng-hide="editMode" data-ng-click="editMode = true"></a>
+                        <a a-href="" class="glyphicon glyphicon-ok" data-ng-show="editMode" data-ng-click="editMode = false; update(user)"></a>
+                        <a a-href="" class="glyphicon glyphicon-remove" data-ng-show="editMode" data-ng-click="editMode = false"></a>
+                        <a a-href="" class="btn btn-danger"  data-ng-show="editMode" data-ng-click="editMode = delete(user.id)">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a class="btn new-user-btn" role="button" ui-sref="admin_add_user">Add New User</a>
+    </div>
+
+</div>

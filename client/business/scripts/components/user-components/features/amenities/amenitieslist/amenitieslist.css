@@ -1,0 +1,64 @@
+.banner
+{
+    padding-bottom: 50px;
+
+    text-align: center;
+
+    background-color: #2d353c;
+}
+
+.banner h1
+{
+    font-family: 'Ubuntu', cursive;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+
+    padding-top: 50px;
+
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+hr
+{
+    border-width: 2px; border-color: #323232;
+}
+
+.title-font h1, h3, h3 small
+{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.centeralized
+{
+    text-align: center;
+}
+
+li .active
+{
+    background-color: black !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus
+{
+    color: white;
+    background-color: #2d353c;  
+} 
+
+.mapstreet {
+    padding: 0 30px 0 30px
+}
+
+.streetview0 {
+    display: none;
+    width:500px;
+    height:300px;
+    float:left;
+}
+
+.amenityHolder {
+    margin: 0 20px 20px 20px;
+}
